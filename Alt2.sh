@@ -1,4 +1,7 @@
-# new attempt at alt1 clone
+# TODO
+# Automate the WINDOW_ID assignment
+# Clean up the terminal outputs to look cleaner
+# Turn into an executable file
 
 WINDOW_ID=60817428
 MOUSE_ID=$(xinput --list | grep -i -m 1 'mouse' | grep -o 'id=[0-9]\+' | grep -o '[0-9]\+')
