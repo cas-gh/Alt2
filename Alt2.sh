@@ -1,6 +1,8 @@
 # TODO
 # Automate the WINDOW_ID assignment
 # Clean up the terminal outputs to look cleaner
+# Offer variety in the ways alerts are given
+# Ask for time to alert rather than hard-code it
 # Turn into an executable file
 
 WINDOW_ID=60817428
