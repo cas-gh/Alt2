@@ -10,7 +10,7 @@ active window, and there is a detected mouse click, a timer is reset. If that
 timer is allowed to reach 0 before an input is detected in that specified 
 window, an alert is fired. Currently this is literally a `spd-say` computer
 voice saying "Click". After which the timer is reset to a short time, the 
-default value being 5 seconds, where it will repeat the alert when it again
+default value being 10 seconds, where it will repeat the alert when it again
 reaches 0. This continues until a mouse click is detected in the specified
 window.
 
