@@ -19,16 +19,11 @@ window.
 Before this script will run, you will need to obtain the `xdotool` command-line
 X11 automation tool.
 
-To get started with this script, there are only a few modifications that need
-to be made so that it will work on your machine. Firstly, the $WINDOW_ID 
-variable. This is currently hard-coded into the script and must be changed
-each time you want either change the window that is being watched, or the
-ID for the window you want has changed due to a reboot. I suggest you open up
-a terminal window and run `xdotool selectwindow` and click the window you'd 
-like to watch. Copy the output of that command and set the WINDOW_ID variable
-to that number. Ensure there are no spaces after the `=` when doing so.
-
-Later versions will automate this process.
+To get started with this script, run the file with "./Alt2.sh" in your terminal.
+Your cursor will change and you will be asked to click the window you want the 
+script to keep track of. Simply click whichever window you want to be tracked
+and the timer will start ticking down. Each time you click the window you
+specified, the timer will be reset.
 
 Another change you will likely want to make is the time it takes the script to
 alert you after it has detected an input on the specified window. This can be
@@ -38,7 +33,7 @@ change the integer value in the `if` statement below the $ACTIVE_WINDOW
 variable. That is the value to which the timer is reset after a detected
 input.
 
-Later versions will also automate this process.
+Later versions will automate this process.
 
 For some, the MOUSE_ID variable will not accurately reflect your mouse inputs
 and will need changing for the script to recoginze the inputs properly, but 

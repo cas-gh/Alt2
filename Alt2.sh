@@ -5,9 +5,11 @@
 # Add option to ignore specified inputs
 # Turn into an executable file
 
-
+echo "Please click on whichever window you'd like to track."
 WINDOW_ID=$(xdotool selectwindow)
 MOUSE_ID=$(xinput --list | grep -i -m 1 'mouse' | grep -o 'id=[0-9]\+' | grep -o '[0-9]\+')
+WINDOW_NAME=$(xdotool getwindowname $WINDOW_ID)
+echo "Now tracking window:" $WINDOW_NAME
 
 STATE1=$(xinput --query-state $MOUSE_ID | grep 'button\[' | sort)
 CHECK_STATE=$STATE1
