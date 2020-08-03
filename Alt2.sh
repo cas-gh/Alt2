@@ -1,5 +1,4 @@
 # TODO
-# Automate the WINDOW_ID assignment
 # Clean up the terminal outputs to look cleaner
 # Offer variety in the ways alerts are given
 # Ask for time to alert rather than hard-code it
@@ -7,7 +6,7 @@
 # Turn into an executable file
 
 
-WINDOW_ID=83886100
+WINDOW_ID=$(xdotool selectwindow)
 MOUSE_ID=$(xinput --list | grep -i -m 1 'mouse' | grep -o 'id=[0-9]\+' | grep -o '[0-9]\+')
 
 STATE1=$(xinput --query-state $MOUSE_ID | grep 'button\[' | sort)
@@ -16,7 +15,7 @@ CHECK_STATE=$STATE1
 # Change number after '$NOW +' to number of seconds until alert here and
 # in the window check if statement
 NOW=$(date +"%s")
-CHECK=$(($NOW + 60))
+CHECK=$(($NOW + 270))
 while true
 do
       
@@ -32,27 +31,28 @@ do
     # the focused window
     if [[ "$CHECK_STATE" != "$STATE2" && "$ACTIVE_WINDOW" == "$WINDOW_ID" ]]
     then
-	    CHECK=$(($NOW + 60))
+	    CHECK=$(($NOW + 270))
     fi
     
     STATE1=$STATE2
     NOW=$(date +"%s")
 
-#   Debug pring statements
-#    echo $NOW
-#    echo $CHECK
+    # Debug pring statements
+    # echo $NOW
+    # echo $CHECK
     
     COUNTDOWN=$(($CHECK - $NOW))
     echo $COUNTDOWN
 
-#   If the specified amount of time has passed, alert the user and reset
-#   the time to next alert to 5 seconds
+    # If the specified amount of time has passed, alert the user and reset
+    # the time to next alert to 5 seconds
     if [ "$CHECK" == "$NOW" ]
     then
 	    spd-say click
-	    echo "click"
+	    # echo "click"
 	    CHECK=$(($NOW + 10))
     fi
+
 
 done
 
