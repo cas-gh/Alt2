@@ -1,0 +1,3 @@
+Thinking I should probably not go too deep down the bash script rabbit hole.
+C# seems like a reasonable language to make this program in for real. I now
+have to learn C# since I currently do not know it.
